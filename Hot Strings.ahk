@@ -37,7 +37,7 @@ return
 	send %YMD%: OI:{space}
 return
 
-::aaa::
+:://aaa::
 (
 // Arrange
 
