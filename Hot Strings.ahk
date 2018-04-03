@@ -7,6 +7,26 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 FormatTime, YMD,, yyyyMMdd
 
+; Change note with three slashes and LS-
+::///cnls::
+	send ///%YMD%: OI:{space}LS-
+return
+
+; Change note with three slashes
+::///cn::
+	send ///%YMD%: OI:{space}
+return
+
+; Change note with two slashes and LS-
+:://cnls::
+	send //%YMD%: OI:{space}LS-
+return
+
+; Change note with two slashes
+:://cn::
+	send //%YMD%: OI:{space}
+return
+
 ; Change note with no slashes
 ::/cn::
 	send %YMD%: OI:{space}
@@ -17,25 +37,12 @@ return
 	send %YMD%: OI:{space}
 return
 
-; Change note with two slashes
-:://cn::
-	send //%YMD%: OI:{space}
-return
+::aaa::
+(
+// Arrange
 
-; Change note with two slashes and LS-
-:://cnls::
-	send //%YMD%: OI:{space}LS-
-return
+// Act
 
-; Change note with three slashes
-::///cn::
-	send ///%YMD%: OI:{space}
-return
-
-
-; Change note with three slashes and LS-
-::///cnls::
-	send ///%YMD%: OI:{space}LS-
-return
-
-
+// Assert
+)
+Return
