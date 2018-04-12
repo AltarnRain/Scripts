@@ -9,22 +9,22 @@ FormatTime, YMD,, yyyyMMdd
 
 ; Change note with three slashes and LS-
 ::///cnls::
-	send ///%YMD%: OI:{space}LS-
+	send ///{space}%YMD%: OI:{space}LS-
 return
 
 ; Change note with three slashes
 ::///cn::
-	send ///%YMD%: OI:{space}
+	send ///{space}%YMD%: OI:{space}
 return
 
 ; Change note with two slashes and LS-
 :://cnls::
-	send //%YMD%: OI:{space}LS-
+	send //{space}%YMD%: OI:{space}LS-
 return
 
 ; Change note with two slashes
 :://cn::
-	send //%YMD%: OI:{space}
+	send //{space}%YMD%: OI:{space}
 return
 
 ; Change note with no slashes
