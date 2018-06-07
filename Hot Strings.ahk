@@ -5,36 +5,20 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #SingleInstance force
 
-FormatTime, YMD,, yyyyMMdd
-
 ; Change note with three slashes and LS-
-::///cnls::
-	send ///{space}%YMD%: OI:{space}LS-
+::///cn::
+	send ///{space}%A_YYYY%%A_MM%/%A_DD%: OI:{space}LS-
 return
 
-; Change note with three slashes
-::///cn::
-	send ///{space}%YMD%: OI:{space}
-return
 
 ; Change note with two slashes and LS-
-:://cnls::
-	send //{space}%YMD%: OI:{space}LS-
-return
-
-; Change note with two slashes
 :://cn::
-	send //{space}%YMD%: OI:{space}
+	send //{space}%A_YYYY%%A_MM%/%A_DD%: OI:{space}LS-
 return
 
 ; Change note with no slashes
 ::/cn::
-	send %YMD%: OI:{space}
-return
-
-; Change note with no slashes
-::/cnls::
-	send %YMD%: OI:{space}
+	send %A_YYYY%%A_MM%/%A_DD%: OI:{space}
 return
 
 :://aaa::
@@ -46,3 +30,5 @@ return
 // Assert
 )
 Return
+
+
