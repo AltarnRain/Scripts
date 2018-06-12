@@ -7,18 +7,18 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; Change note with three slashes and LS-
 ::///cn::
-	send ///{space}%A_YYYY%%A_MM%/%A_DD%: OI:{space}LS-
+	send ///{space}%A_YYYY%%A_MM%%A_DD%: OI:{space}LS-
 return
 
 
 ; Change note with two slashes and LS-
 :://cn::
-	send //{space}%A_YYYY%%A_MM%/%A_DD%: OI:{space}LS-
+	send //{space}%A_YYYY%%A_MM%%A_DD%: OI:{space}LS-
 return
 
 ; Change note with no slashes
 ::/cn::
-	send %A_YYYY%%A_MM%/%A_DD%: OI:{space}
+	send %A_YYYY%%A_MM%%A_DD%: OI:{space}
 return
 
 :://aaa::
@@ -30,5 +30,9 @@ return
 // Assert
 )
 Return
+
+:://rvn::
+send >{space}%A_YYYY%%A_MM%%A_DD%:{space}OI:{space}
+return
 
 
