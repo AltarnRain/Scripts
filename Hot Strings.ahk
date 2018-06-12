@@ -31,8 +31,14 @@ return
 )
 Return
 
+; ReView Note
 :://rvn::
 send >{space}%A_YYYY%%A_MM%%A_DD%:{space}OI:{space}
+return
+
+; ReView Revision
+:://rvr::
+send | X       | OI  | %A_YYYY%%A_MM%%A_DD% | InProgress | Reviewed                                                                             |
 return
 
 
