@@ -7,33 +7,37 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 EnvGet, Initials, IV_INITIALS
 
-; Change note with three slashes and LS-
+:://ivissue::
+InputBox, IssueNumber, Issue Number, Enter Issue Number
+return
+
+; Change note with three slashes and issue.
 :://cnxml::
-	send {Text}<!-- %A_YYYY%%A_MM%%A_DD%: %Initials%:  -->
+	send {Text}<!-- %A_YYYY%%A_MM%%A_DD%: %Initials%: %IssueNumber%:  -->
 	send {Left}
 	send {Left}
 	send {Left}
 	send {Left}
 return
 
-; Change note with three slashes and LS-
+; Change note with three slashes, YYYYMMDD and issue.
 ::///cn::
-	send ///{space}%A_YYYY%%A_MM%%A_DD%: %Initials%:{space}
+	send /// %A_YYYY%%A_MM%%A_DD%: %Initials%: %IssueNumber%:{space}
 return
 
-; Change note with two slashes and LS-
+; Change note with two slashes and issue.
 :://cn::
-	send //{space}%A_YYYY%%A_MM%%A_DD%: %Initials%:{space}
+	send // %A_YYYY%%A_MM%%A_DD%: %Initials%: %IssueNumber%:{space}
 return
 
 ; Change note with no slashes
 ::/cn::
-	send %A_YYYY%%A_MM%%A_DD%: %Initials%:{space}
+	send %A_YYYY%%A_MM%%A_DD%: %Initials%: %IssueNumber%:{space}
 return
 
 ; ReView Note
 :://rvn::
-send >{space}%A_YYYY%%A_MM%%A_DD%:{space}%Initials%:{space}
+send > %A_YYYY%%A_MM%%A_DD%: %Initials%:{space}
 return
 
 ; ReView Revision
